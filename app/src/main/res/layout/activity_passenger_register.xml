@@ -58,7 +58,7 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRegister2"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/register"
