@@ -12,4 +12,9 @@
     <string name="register">Register</string>
     <string name="account">Account</string>
     <string name="inbox">Inbox</string>
+    <string name="email">E-mail:</string>
+    <string name="phone">Phone number:</string>
+    <string name="password">Password:</string>
+    <string name="e_mail_example">username@hostname.extension</string>
+    <string name="password_example">A-Z a-z 0-9 - _</string>
 </resources>
