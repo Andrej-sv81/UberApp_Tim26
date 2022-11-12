@@ -16,5 +16,7 @@
     <string name="phone">Phone number:</string>
     <string name="password">Password:</string>
     <string name="e_mail_example">username@hostname.extension</string>
-    <string name="password_example">A-Z a-z 0-9 - _</string>
+    <string name="password_example">A–Z a–z 0–9 - _</string>
+    <string name="history">History</string>
+    <string name="home">Home</string>
 </resources>

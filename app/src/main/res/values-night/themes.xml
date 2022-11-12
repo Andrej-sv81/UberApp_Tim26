@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.UberApp_Tim26" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#34A4BF</item>
-        <item name="colorPrimaryVariant">#114C7C</item>
+        <item name="colorPrimary">@color/teal_300</item>
+        <item name="colorPrimaryVariant">@color/teal_1000</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#026056</item>
-        <item name="colorSecondaryVariant">#03554D</item>
+        <item name="colorSecondary">@color/green_1000</item>
+        <item name="colorSecondaryVariant">@color/green_1200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>

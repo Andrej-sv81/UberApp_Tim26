@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/passengerHome"
+        android:icon="@drawable/ic_home"
+        android:orderInCategory="100"
+        android:title="@string/home"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/passengerAccount"
+        android:title="@string/account"
+        android:icon="@drawable/ic_account"
+        android:orderInCategory="200"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/passengerInbox"
+        android:title="@string/inbox"
+        android:icon="@drawable/ic_inbox"
+        android:orderInCategory="300"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/passengerHistory"
+        android:title="@string/history"
+        android:icon="@drawable/ic_history"
+        android:orderInCategory="400"
+        app:showAsAction="always" />
+    
+</menu>
