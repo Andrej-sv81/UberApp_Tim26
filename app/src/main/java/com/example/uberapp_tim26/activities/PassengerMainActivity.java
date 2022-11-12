@@ -106,6 +106,7 @@ public class PassengerMainActivity extends AppCompatActivity {
                 startActivity(i4);
                 break;
         }
+        finish();
         return super.onOptionsItemSelected(item);
     }
 }
