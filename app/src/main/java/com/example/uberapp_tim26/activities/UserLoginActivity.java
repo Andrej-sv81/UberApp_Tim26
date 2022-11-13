@@ -21,6 +21,17 @@ public class UserLoginActivity extends AppCompatActivity {
 
         Button signIn = findViewById(R.id.buttonSignIn);
         signIn.setOnClickListener(new SignInListener());
+
+        //TODO: izbrisati dugme kada se doda ispravan prelazak na Driver Account
+        Button account = findViewById(R.id.driverAccountButton);
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UserLoginActivity.this, DriverAccountActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 
     @Override

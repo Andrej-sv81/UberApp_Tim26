@@ -24,6 +24,7 @@ public class PassengerMainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarPassengerMain);
         setSupportActionBar(toolbar);
 
+        //TODO: izbrisati dugmad nakon postavljanja toolbar-a
         Button register = findViewById(R.id.buttonAccount);
         register.setOnClickListener(new AccountListener());
 

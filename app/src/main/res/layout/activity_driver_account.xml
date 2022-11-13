@@ -1,9 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.DriverAccountActivity">
+    tools:context=".activities.DriverAccountActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/driverEmail"
+        android:layout_width="369dp"
+        android:layout_height="47dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="31dp"
+        android:text=""
+        android:textSize="20sp"
+        tools:layout_below="@id/imageView2" />
+
+    <TextView
+        android:id="@+id/driverID"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/toolbarDriverAccount"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:text=""
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/driverSurname"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/toolbarDriverAccount"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="21dp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:text=""
+        android:textSize="20sp" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarDriverAccount"
+        android:layout_width="407dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="1dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="169dp"
+        android:layout_height="172dp"
+        android:layout_below="@id/toolbarDriverAccount"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/profile_image" />
+
+    <TextView
+        android:id="@+id/driverName"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/toolbarDriverAccount"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:text=""
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/driverPhone"
+        android:layout_width="369dp"
+        android:layout_height="47dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="30dp"
+        android:text=""
+        android:textSize="20sp"
+        tools:layout_below="@id/imageView2" />
+
+</RelativeLayout>
