@@ -16,7 +16,7 @@ public class PassengerRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_passenger_register);
 
-        Button button = findViewById(R.id.buttonRegister2);
+        Button button = findViewById(R.id.buttonRegister);
         button.setOnClickListener(new RegisterListener2());
     }
 
