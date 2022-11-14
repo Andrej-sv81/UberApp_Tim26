@@ -31,6 +31,7 @@ public class DriverRideHistoryActivity extends AppCompatActivity {
         RideHistoryAdapter adapter = new RideHistoryAdapter(this);
         ListView lista = findViewById(R.id.lista);
         lista.setAdapter(adapter);
+        //TODO: Ovo ne radi. Ne otvara details
         lista.setOnItemSelectedListener(new getDetails());
     }
 

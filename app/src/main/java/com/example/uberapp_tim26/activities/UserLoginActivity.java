@@ -75,7 +75,6 @@ public class UserLoginActivity extends AppCompatActivity {
 
     protected class SignInListener implements View.OnClickListener {
         @Override
-        //TODO: IZMENI KLASU ZA REGISTER
         public void onClick(View v) {
 
             String user = tw.getText().toString();
