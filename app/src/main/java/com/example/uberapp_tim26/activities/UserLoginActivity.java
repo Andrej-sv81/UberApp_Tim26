@@ -16,21 +16,21 @@ public class UserLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
 
-        Button register = findViewById(R.id.buttonRegister);
+        Button register = findViewById(R.id.registerbtn);
         register.setOnClickListener(new RegisterListener());
 
-        Button signIn = findViewById(R.id.buttonSignIn);
+        Button signIn = findViewById(R.id.loginbtn);
         signIn.setOnClickListener(new SignInListener());
 
         //TODO: izbrisati dugme kada se doda ispravan prelazak na Driver Account
-        Button account = findViewById(R.id.driverAccountButton);
+/*        Button account = findViewById(R.id.driverAccountButton);
         account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(UserLoginActivity.this, DriverAccountActivity.class);
                 startActivity(i);
             }
-        });
+        });*/
 
     }
 
