@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,8 +23,12 @@ public class UserLoginActivity extends AppCompatActivity {
         Button signIn = findViewById(R.id.loginbtn);
         signIn.setOnClickListener(new SignInListener());
 
+
+        TextView password = findViewById(R.id.forgotenpassword);
+        password.setOnClickListener(new ForgotPasswordListener());
+
         //TODO: izbrisati dugme kada se doda ispravan prelazak na Driver Account
-/*        Button account = findViewById(R.id.driverAccountButton);
+        /*Button account = findViewById(R.id.buttonProba);
         account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +72,7 @@ public class UserLoginActivity extends AppCompatActivity {
     protected class RegisterListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
+
             Intent i = new Intent(UserLoginActivity.this, PassengerRegisterActivity.class);
             startActivity(i);
         }
@@ -74,8 +80,18 @@ public class UserLoginActivity extends AppCompatActivity {
 
     protected class SignInListener implements View.OnClickListener {
         @Override
+        //TODO: IZMENI KLASU ZA REGISTER
         public void onClick(View v) {
-            Intent i = new Intent(UserLoginActivity.this, PassengerMainActivity.class);
+            Intent i = new Intent(UserLoginActivity.this,PassengerMainActivity.class);
+            startActivity(i);
+        }
+    }
+
+    protected  class ForgotPasswordListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            Intent i = new Intent(UserLoginActivity.this, ChangePasswordActivity.class);
             startActivity(i);
         }
     }
