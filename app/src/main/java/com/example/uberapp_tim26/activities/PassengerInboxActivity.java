@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.uberapp_tim26.R;
+import com.example.uberapp_tim26.adapters.MessageAdapter;
 
 public class PassengerInboxActivity extends AppCompatActivity {
 
@@ -21,6 +23,11 @@ public class PassengerInboxActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbarPassengerMain);
         setSupportActionBar(toolbar);
+
+        ListView lw = findViewById(R.id.listView);
+        MessageAdapter ma = new MessageAdapter(this);
+        lw.setAdapter(ma);
+
     }
 
     @Override
