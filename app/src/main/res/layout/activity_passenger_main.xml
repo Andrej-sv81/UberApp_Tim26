@@ -21,7 +21,7 @@
             android:layout_marginStart="1dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
-            android:background="@color/purple_200"
+            android:background="@color/purple_500"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,18 +36,60 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/appBar"
         android:src="@drawable/citymap" />
+
+    <TextView
+        android:id="@+id/reportdriver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mapMockUp"
+        android:text="Driver is inconsistent? Report him."
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/purple_700"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/selecteddriver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reportdriver"
+        android:text="Driver: Full Name"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/rideprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price: price"
+        android:layout_below="@id/selecteddriver"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/rideduration"
+        android:layout_below="@id/rideprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration: duration"
+        android:layout_centerHorizontal="true"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mapMockUp"/>
+        android:text="Relation: A to B"
+        android:id="@+id/relation"
+        android:layout_below="@id/rideduration"
+        android:layout_centerHorizontal="true"
+        />
 
     <Button
         android:id="@+id/panicButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mapMockUp"
+        android:layout_below="@id/reportdriver"
         android:layout_centerHorizontal="true"
-        android:background="@color/purple_200"
+        android:backgroundTint="@color/purple_500"
+        android:text="PANIC"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
         />
 
     <Button

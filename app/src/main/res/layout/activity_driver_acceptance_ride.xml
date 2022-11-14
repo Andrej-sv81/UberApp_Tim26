@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.DriverAcceptanceRideActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/citymap"
+        android:id="@+id/mapdriver"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mapdriver"
+        android:layout_centerHorizontal="true"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/acceptbtn"
+            android:layout_below="@id/mapdriver"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/purple_700"
+            android:padding="20dp"
+            android:text="ACCEPT"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/declinebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mapdriver"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/purple_700"
+            android:padding="20dp"
+            android:text="DECLINE"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+
+
+
+
