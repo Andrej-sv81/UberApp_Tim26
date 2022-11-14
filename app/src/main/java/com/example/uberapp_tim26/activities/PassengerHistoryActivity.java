@@ -56,7 +56,7 @@ public class PassengerHistoryActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.clear();
-        getMenuInflater().inflate(R.menu.menu_passenger_main, menu);
+        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

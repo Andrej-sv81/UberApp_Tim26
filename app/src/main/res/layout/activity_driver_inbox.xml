@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.DriverRideHistoryActivity">
+    tools:context=".activities.DriverInboxActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarDriverHistory"
+            android:id="@+id/toolbarDriverInbox"
             android:layout_width="407dp"
             android:layout_height="74dp"
             android:layout_marginStart="1dp"

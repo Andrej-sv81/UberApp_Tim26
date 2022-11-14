@@ -1,25 +1,25 @@
 package com.example.uberapp_tim26.activities;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import com.example.uberapp_tim26.R;
 
-public class PassengerInboxActivity extends AppCompatActivity {
+public class DriverMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_passenger_inbox);
+        setContentView(R.layout.activity_driver_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbarPassengerMain);
+        Toolbar toolbar = findViewById(R.id.toolbarDriverMain);
         setSupportActionBar(toolbar);
     }
 
@@ -66,19 +66,19 @@ public class PassengerInboxActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.passengerHome:
-                Intent i = new Intent(PassengerInboxActivity.this, PassengerMainActivity.class);
+                Intent i = new Intent(DriverMainActivity.this, DriverMainActivity.class);
                 startActivity(i);
                 break;
             case R.id.passengerAccount:
-                Intent i2 = new Intent(PassengerInboxActivity.this, PassengerAccountActivity.class);
+                Intent i2 = new Intent(DriverMainActivity.this, DriverAccountActivity.class);
                 startActivity(i2);
                 break;
             case R.id.passengerInbox:
-                Intent i3 = new Intent(PassengerInboxActivity.this, PassengerInboxActivity.class);
+                Intent i3 = new Intent(DriverMainActivity.this, DriverInboxActivity.class);
                 startActivity(i3);
                 break;
             case R.id.passengerHistory:
-                Intent i4 = new Intent(PassengerInboxActivity.this, PassengerHistoryActivity.class);
+                Intent i4 = new Intent(DriverMainActivity.this, DriverRideHistoryActivity.class);
                 startActivity(i4);
                 break;
         }
