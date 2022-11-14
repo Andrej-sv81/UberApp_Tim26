@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/mapMockUp"
-        android:text="Driver is inconsistent? Report him."
+        android:text="@string/driver_is_inconsistent_report_him"
         android:layout_centerHorizontal="true"
         android:textColor="@color/purple_700"
         android:layout_marginBottom="15dp"/>
@@ -52,14 +52,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/reportdriver"
-        android:text="Driver: Full Name"
+        android:text="@string/driver_full_name"
         android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/rideprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Price: price"
+        android:text="@string/price_price2"
         android:layout_below="@id/selecteddriver"
         android:layout_centerHorizontal="true"/>
 
@@ -68,13 +68,13 @@
         android:layout_below="@id/rideprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Duration: duration"
+        android:text="@string/duration_duration2"
         android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Relation: A to B"
+        android:text="@string/relation_a_to_b2"
         android:id="@+id/relation"
         android:layout_below="@id/rideduration"
         android:layout_centerHorizontal="true"
@@ -87,7 +87,7 @@
         android:layout_below="@id/reportdriver"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/purple_700"
-        android:text="PANIC"
+        android:text="@string/panic"
         android:textStyle="bold"
         android:layout_marginTop="100dp"
         />

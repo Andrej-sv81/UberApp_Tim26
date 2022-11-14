@@ -17,7 +17,7 @@
         android:id="@+id/relationAcceptance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Relation: A to B"
+        android:text="@string/relation_a_to_b"
         android:layout_centerHorizontal="true"/>
 
     <TextView
@@ -25,7 +25,7 @@
         android:id="@+id/milaegeAcceptance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Milaege: _km"
+        android:text="@string/milaege_km"
         android:layout_centerHorizontal="true"/>
 
     <TextView
@@ -33,7 +33,7 @@
         android:id="@+id/priceAcceptance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Price: price"
+        android:text="@string/price_price"
         android:layout_centerHorizontal="true"/>
 
     <TextView
@@ -41,14 +41,14 @@
         android:layout_below="@id/priceAcceptance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Passengers: number"
+        android:text="@string/passengers_number"
         android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/durationaAcceptance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Duration: duration"
+        android:text="@string/duration_duration"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/passengersAcceptance"/>
 
@@ -65,35 +65,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/acceptbtn"
-            android:layout_below="@id/mapdriver"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="@color/purple_700"
             android:padding="20dp"
-            android:text="ACCEPT"
+            android:text="@string/accept"
             android:textStyle="bold"
-            android:textSize="18dp"
-            android:textColor="@color/white"
-            android:layout_centerHorizontal="true"
-            />
+            android:textSize="18sp"
+            android:textColor="@color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/declinebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/mapdriver"
-            android:layout_centerHorizontal="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="@color/purple_700"
             android:padding="20dp"
-            android:text="DECLINE"
+            android:text="@string/decline"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </LinearLayout>

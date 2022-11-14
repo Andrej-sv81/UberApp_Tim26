@@ -20,4 +20,25 @@
     <string name="history">History</string>
     <string name="home">Home</string>
     <string name="profile_image">Profile Image</string>
+    <string name="relation_a_to_b">Relation: A to B</string>
+    <string name="milaege_km">Milaege: _km</string>
+    <string name="price_price">Price: price</string>
+    <string name="passengers_number">Passengers: number</string>
+    <string name="duration_duration">Duration: duration</string>
+    <string name="accept">ACCEPT</string>
+    <string name="decline">DECLINE</string>
+    <string name="driver_full_name">Driver: Full Name</string>
+    <string name="driver_is_inconsistent_report_him">Driver is inconsistent? Report him.</string>
+    <string name="price_price2">Price: price</string>
+    <string name="duration_duration2">Duration: duration</string>
+    <string name="relation_a_to_b2">Relation: A to B</string>
+    <string name="panic">PANIC</string>
+    <string name="garigo">GariGo</string>
+    <string name="password2">Password</string>
+    <string name="username">Username</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="log_in">Log in</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="or">OR</string>
 </resources>
