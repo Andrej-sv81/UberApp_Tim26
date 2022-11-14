@@ -21,7 +21,7 @@
             android:layout_marginStart="1dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
-            android:background="?attr/colorPrimary"
+            android:background="@color/purple_200"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/mapMockUp"
         android:layout_centerHorizontal="true"
+        android:background="@color/purple_200"
         />
 
     <Button
