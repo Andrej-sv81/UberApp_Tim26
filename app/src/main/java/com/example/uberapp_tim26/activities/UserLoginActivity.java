@@ -4,12 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.uberapp_tim26.R;
 
 public class UserLoginActivity extends AppCompatActivity {
+
+    EditText tw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +25,9 @@ public class UserLoginActivity extends AppCompatActivity {
 
         Button signIn = findViewById(R.id.loginbtn);
         signIn.setOnClickListener(new SignInListener());
+
+        tw = findViewById(R.id.edittext);
+
 
         //TODO: izbrisati dugme kada se doda ispravan prelazak na Driver Account
       /* Button account = findViewById(R.id.button);
@@ -75,7 +82,13 @@ public class UserLoginActivity extends AppCompatActivity {
     protected class SignInListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Intent i = new Intent(UserLoginActivity.this, PassengerMainActivity.class);
+            String user = tw.getText().toString();
+            Intent i;
+            if(user.equalsIgnoreCase("driver")){
+                i = new Intent(UserLoginActivity.this, DriverMainActivity.class);
+            }else{
+                i = new Intent(UserLoginActivity.this, PassengerMainActivity.class);
+            }
             startActivity(i);
         }
     }
