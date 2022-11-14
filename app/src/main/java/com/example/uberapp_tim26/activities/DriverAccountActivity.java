@@ -18,9 +18,6 @@ public class DriverAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_account);
 
-        Toolbar toolbar = findViewById(R.id.toolbarDriverAccount);
-        setSupportActionBar(toolbar);
-
         TextView name = findViewById(R.id.driverName);
         TextView surname = findViewById(R.id.driverSurname);
         TextView id = findViewById(R.id.driverID);
