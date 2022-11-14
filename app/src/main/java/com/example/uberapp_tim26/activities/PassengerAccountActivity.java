@@ -5,12 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.uberapp_tim26.R;
+import com.example.uberapp_tim26.model.DriverPlaceholder;
+import com.example.uberapp_tim26.tools.Mokap;
 
 public class PassengerAccountActivity extends AppCompatActivity {
 
@@ -21,6 +25,22 @@ public class PassengerAccountActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbarPassengerMain);
         setSupportActionBar(toolbar);
+
+        TextView name = findViewById(R.id.passengerName);
+        TextView surname = findViewById(R.id.passengerSurname);
+        TextView id = findViewById(R.id.passengerID);
+        TextView phone = findViewById(R.id.driverPhone);
+        TextView email = findViewById(R.id.passengerEmail);
+        ImageView img = findViewById(R.id.imageView2);
+        //TODO: PASSSENGER PLACEHOLDER I MOCKUP
+        DriverPlaceholder marko = Mokap.getDriver();
+
+        name.setText(marko.getName());
+        surname.setText(marko.getSurname());
+        id.setText(marko.getId());
+        phone.setText(marko.getPhone());
+        email.setText(marko.getEmail());
+        img.setImageResource(marko.getImg());
     }
 
     @Override
