@@ -12,12 +12,53 @@
         android:src="@drawable/citymap"
         android:id="@+id/mapdriver"/>
 
+    <TextView
+        android:layout_below="@id/mapdriver"
+        android:id="@+id/relationAcceptance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Relation: A to B"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_below="@id/relationAcceptance"
+        android:id="@+id/milaegeAcceptance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Milaege: _km"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_below="@id/milaegeAcceptance"
+        android:id="@+id/priceAcceptance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price: price"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/passengersAcceptance"
+        android:layout_below="@id/priceAcceptance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Passengers: number"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/durationaAcceptance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration: duration"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/passengersAcceptance"/>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mapdriver"
+        android:layout_below="@id/durationaAcceptance"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         >
 
         <com.google.android.material.button.MaterialButton
