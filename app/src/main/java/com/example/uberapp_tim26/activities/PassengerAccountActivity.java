@@ -14,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.uberapp_tim26.R;
 import com.example.uberapp_tim26.model.DriverPlaceholder;
+import com.example.uberapp_tim26.model.PassengerPlaceholder;
 import com.example.uberapp_tim26.tools.Mokap;
 
 public class PassengerAccountActivity extends AppCompatActivity {
@@ -32,15 +33,15 @@ public class PassengerAccountActivity extends AppCompatActivity {
         TextView phone = findViewById(R.id.driverPhone);
         TextView email = findViewById(R.id.passengerEmail);
         ImageView img = findViewById(R.id.imageView2);
-        //TODO: PASSSENGER PLACEHOLDER I MOCKUP
-        DriverPlaceholder marko = Mokap.getDriver();
 
-        name.setText(marko.getName());
-        surname.setText(marko.getSurname());
-        id.setText(marko.getId());
-        phone.setText(marko.getPhone());
-        email.setText(marko.getEmail());
-        img.setImageResource(marko.getImg());
+        PassengerPlaceholder pera = Mokap.getPassenger();
+
+        name.setText(pera.getName());
+        surname.setText(pera.getSurname());
+        id.setText(pera.getId());
+        phone.setText(pera.getPhone());
+        email.setText(pera.getEmail());
+        img.setImageResource(pera.getImg());
     }
 
     @Override
