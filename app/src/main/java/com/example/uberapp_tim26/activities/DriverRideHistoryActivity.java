@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 
@@ -26,6 +27,11 @@ public class DriverRideHistoryActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbarDriverHistory);
         setSupportActionBar(toolbar);
+
+        RideHistoryAdapter adapter = new RideHistoryAdapter(this);
+        ListView lista = findViewById(R.id.lista);
+        lista.setAdapter(adapter);
+        lista.setOnItemSelectedListener(new getDetails());
     }
 
     @Override
@@ -60,18 +66,22 @@ public class DriverRideHistoryActivity extends AppCompatActivity {
         finish();
         return super.onOptionsItemSelected(item);
 
-//        RideHistoryAdapter adapter = new RideHistoryAdapter(this);
-//        ListView lista = findViewById(R.id.lista);
-//        lista.setAdapter(adapter);
-//        lista.setOnItemSelectedListener(new getDetails());
     }
 
-    protected class getDetails implements View.OnClickListener {
+    protected class getDetails implements AdapterView.OnItemSelectedListener {
+
+
         @Override
-        //TODO: IZMENI KLASU ZA REGISTER
-        public void onClick(View v) {
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             Intent i = new Intent(DriverRideHistoryActivity.this,RideHistoryDetailsActivity.class);
             startActivity(i);
         }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+
+
     }
 }
