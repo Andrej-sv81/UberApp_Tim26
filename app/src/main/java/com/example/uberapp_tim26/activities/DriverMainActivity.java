@@ -9,10 +9,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.uberapp_tim26.R;
 
-public class DriverMainActivity extends AppCompatActivity {
+public class DriverMainActivity extends AppCompatActivity implements View.OnClickListener{
+    private Button toggleButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,9 @@ public class DriverMainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbarDriverMain);
         setSupportActionBar(toolbar);
+
+        toggleButton = (Button) findViewById(R.id.toggleBtn);
+        toggleButton.setOnClickListener((View.OnClickListener) this);
     }
 
     @Override
@@ -85,4 +91,14 @@ public class DriverMainActivity extends AppCompatActivity {
         finish();
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onClick(View v) {
+        if(toggleButton.getText().equals("Online")){
+            toggleButton.setText("Offline");
+        } else {
+            toggleButton.setText("Online");
+        }
+    }
+
 }
