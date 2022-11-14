@@ -28,6 +28,8 @@ public class UserLoginActivity extends AppCompatActivity {
 
         tw = findViewById(R.id.edittext);
 
+        TextView password = findViewById(R.id.forgotenpassword);
+        password.setOnClickListener(new ForgotPasswordListener());
 
         //TODO: izbrisati dugme kada se doda ispravan prelazak na Driver Account
       /* Button account = findViewById(R.id.button);
@@ -89,6 +91,15 @@ public class UserLoginActivity extends AppCompatActivity {
             }else{
                 i = new Intent(UserLoginActivity.this, PassengerMainActivity.class);
             }
+            startActivity(i);
+        }
+    }
+
+    protected  class ForgotPasswordListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            Intent i = new Intent(UserLoginActivity.this, ChangePasswordActivity.class);
             startActivity(i);
         }
     }
