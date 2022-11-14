@@ -3,14 +3,19 @@ package com.example.uberapp_tim26.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
+
 
 import com.example.uberapp_tim26.R;
+import com.example.uberapp_tim26.adapters.RideHistoryAdapter;
 
 public class DriverRideHistoryActivity extends AppCompatActivity {
 
@@ -54,5 +59,19 @@ public class DriverRideHistoryActivity extends AppCompatActivity {
         }
         finish();
         return super.onOptionsItemSelected(item);
+
+//        RideHistoryAdapter adapter = new RideHistoryAdapter(this);
+//        ListView lista = findViewById(R.id.lista);
+//        lista.setAdapter(adapter);
+//        lista.setOnItemSelectedListener(new getDetails());
+    }
+
+    protected class getDetails implements View.OnClickListener {
+        @Override
+        //TODO: IZMENI KLASU ZA REGISTER
+        public void onClick(View v) {
+            Intent i = new Intent(DriverRideHistoryActivity.this,RideHistoryDetailsActivity.class);
+            startActivity(i);
+        }
     }
 }

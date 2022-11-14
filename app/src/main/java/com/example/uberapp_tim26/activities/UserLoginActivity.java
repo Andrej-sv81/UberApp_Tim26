@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -28,16 +29,8 @@ public class UserLoginActivity extends AppCompatActivity {
 
         tw = findViewById(R.id.edittext);
 
-
-        //TODO: izbrisati dugme kada se doda ispravan prelazak na Driver Account
-      /* Button account = findViewById(R.id.button);
-        account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(UserLoginActivity.this, DriverAccountActivity.class);
-                startActivity(i);
-            }
-        });*/
+        TextView password = findViewById(R.id.forgotenpassword);
+        password.setOnClickListener(new ForgotPasswordListener());
 
     }
 
@@ -74,6 +67,7 @@ public class UserLoginActivity extends AppCompatActivity {
     protected class RegisterListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
+
             Intent i = new Intent(UserLoginActivity.this, PassengerRegisterActivity.class);
             startActivity(i);
         }
@@ -81,7 +75,9 @@ public class UserLoginActivity extends AppCompatActivity {
 
     protected class SignInListener implements View.OnClickListener {
         @Override
+        //TODO: IZMENI KLASU ZA REGISTER
         public void onClick(View v) {
+
             String user = tw.getText().toString();
             Intent i;
             if(user.equalsIgnoreCase("driver")){
@@ -89,6 +85,15 @@ public class UserLoginActivity extends AppCompatActivity {
             }else{
                 i = new Intent(UserLoginActivity.this, PassengerMainActivity.class);
             }
+            startActivity(i);
+        }
+    }
+
+    protected  class ForgotPasswordListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            Intent i = new Intent(UserLoginActivity.this, ChangePasswordActivity.class);
             startActivity(i);
         }
     }
