@@ -35,10 +35,25 @@
     <string name="panic">PANIC</string>
     <string name="garigo">GariGo</string>
     <string name="password2">Password</string>
-    <string name="username">Username</string>
+    <string name="username">Username:</string>
     <string name="sign_in">Sign in</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="log_in">Log in</string>
     <string name="create_new_account">Create new account</string>
     <string name="or">OR</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Closed</string>
+    <string name="submit">Submit</string>
+    <string name="name">Name:</string>
+    <string name="changepassword">Change password</string>
+    <string name="lastname">Last name:</string>
+    <string name="address">Address:</string>
+    <string name="oldpassword">Old password here</string>
+    <string name="newpassword">New password here</string>
+    <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="Submit">Submit</string>
+    <string name="favouriterides">Favourite rides</string>
 </resources>

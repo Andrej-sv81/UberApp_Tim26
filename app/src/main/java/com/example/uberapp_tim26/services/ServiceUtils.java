@@ -7,7 +7,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceUtils {
-    private static final String BASE_URL = "http://localhost:8080/api/";
+    private static final String BASE_URL = "http://192.168.0.197:8080/api/";
 
     static TokenInterceptor interceptor = new TokenInterceptor();
 
@@ -20,7 +20,12 @@ public class ServiceUtils {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
+    // SERVICES ON SPRINGBOOT SERVER
     public static UserEndpoints userEndpoints = retrofit.create(UserEndpoints.class);
+    public static PassengerEndpoints passengerEndpoints = retrofit.create(PassengerEndpoints.class);
+    public static RideEndpoints rideEndpoints = retrofit.create(RideEndpoints.class);
+
+
     static OkHttpClient clientReports = new OkHttpClient.Builder()
             .addInterceptor(interceptor).readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS).build();
