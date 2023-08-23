@@ -4,10 +4,10 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class CredentialsDTO {
-    @SerializedName("password")
+    @SerializedName("email")
     @Expose
     private String email;
-    @SerializedName("email")
+    @SerializedName("password")
     @Expose
     private String password;
 

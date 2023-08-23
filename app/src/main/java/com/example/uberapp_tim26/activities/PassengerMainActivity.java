@@ -1,5 +1,6 @@
 package com.example.uberapp_tim26.activities;
 
+import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -9,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
@@ -20,6 +22,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -69,26 +72,16 @@ public class PassengerMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_passenger_main);
-        String channelId = "scheduled_ride_channel";
-        String channelName = "Scheduled Ride";
 
-        notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_DEFAULT);
-            channel.setDescription("This channel is for scheduled ride notifications");
-            channel.enableVibration(true);
-            notificationManager.createNotificationChannel(channel);
-        }
 
-        userPrefs = getSharedPreferences("userPrefs", Context.MODE_PRIVATE);
+
+        userPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         pvm = this;
-        Call<UserInfoDTO> driverInfoDTOCall = ServiceUtils.passengerEndpoints.getPassengerById(userPrefs.getString("id","nema id"));
+        Call<UserInfoDTO> driverInfoDTOCall = ServiceUtils.passengerEndpoints.getPassengerById(String.valueOf(userPrefs.getLong("id", 0L)));
         driverInfoDTOCall.enqueue(new Callback<UserInfoDTO>() {
             @Override
             public void onResponse(Call<UserInfoDTO> call, Response<UserInfoDTO> response) {
                 passenger = response.body();
-                setPassengerInfo(passenger);
-
                 FragmentTransition.to(PassengerMainFragment.newInstance(passenger), pvm, true,R.id.mainContent);
 
 
@@ -100,94 +93,12 @@ public class PassengerMainActivity extends AppCompatActivity {
             }
         });
 
-
-        //createPassengerNotifSession();    TODO CREATE NOTIFY SESSION
-
         Toolbar toolbar = findViewById(R.id.toolbar);
-        //toolbar.setLogo(R.drawable.ic_topgo_logo);
         toolbar.setTitle(R.string.garigo);
-
-        View logoView = toolbar.getChildAt(0);
-
-
-        logoView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragManager = pvm.getSupportFragmentManager();
-                int count = pvm.getSupportFragmentManager().getBackStackEntryCount();
-                Fragment frag = fragManager.getFragments().get(count > 0 ? count - 1 : count);
-                if (frag.getClass().equals(PassengerMainFragment.class)) {
-
-                } else {
-                    FragmentTransition.to(PassengerMainFragment.newInstance(passenger), pvm, false, R.id.mainContent);
-                }
-            }
-        });
         setSupportActionBar(toolbar);
 
-
-        profileLayout = findViewById(R.id.profileBox);
-        mTitle = getTitle();
-        mDrawerLayout = findViewById(R.id.drawerLayout);
-        mDrawerList = findViewById(R.id.navList);
-
-        mDrawerPane = findViewById(R.id.drawerPane);
-
-        mNavItems.add(new NavItem("Inbox", "This is your inbox", R.drawable.ic_inbox));
-        mNavItems.add(new NavItem("History", "Ride history", R.drawable.ic_history));
-        DrawerListAdapter DLA = new DrawerListAdapter(this, mNavItems);
-        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-
-        mDrawerList.setAdapter(DLA);
-        final ActionBar actionBar = getSupportActionBar();
-
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeButtonEnabled(true);
-        }
-
-        mDrawerToggle = new ActionBarDrawerToggle(
-                this,                  /* host Activity */
-                mDrawerLayout,         /* DrawerLayout object */
-                toolbar,  /* nav drawer image to replace 'Up' caret */
-                R.string.drawer_open,  /* "open drawer" description for accessibility */
-                R.string.drawer_close  /* "close drawer" description for accessibility */
-        ) {
-            public void onDrawerClosed(View view) {
-                getSupportActionBar().setTitle(mTitle);
-                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-            }
-
-            public void onDrawerOpened(View drawerView) {
-                getSupportActionBar().setTitle("iReviewer");
-                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-            }
-        };
-
     }
 
-    private void setPassengerInfo(UserInfoDTO passenger) {
-
-        TextView passengerInfo = findViewById(R.id.passengerInfoTextView);
-        passengerInfo.setText(passenger.getName() + " " + passenger.getSurname());
-
-        int index = passenger.getProfilePicture().indexOf(",") + 1;
-        String base64 = passenger.getProfilePicture().substring(index);
-        byte[] imageBytes = Base64.decode(base64, Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
-        ImageView image = findViewById(R.id.profileIcon);
-        image.setImageBitmap(bitmap);
-
-        profileLayout = findViewById(R.id.profileBox);
-
-        profileLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransition.to(PassengerProfileFragment.newInstance(passenger), pvm, false,R.id.mainContent);
-                mDrawerLayout.closeDrawers();
-            }
-        });
-    }
 
     @Override
     protected void onStart() {
@@ -219,21 +130,7 @@ public class PassengerMainActivity extends AppCompatActivity {
         super.onRestart();
     }
 
-    protected class AccountListener implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            Intent i = new Intent(PassengerMainActivity.this, PassengerAccountActivity.class);
-            startActivity(i);
-        }
-    }
 
-    protected class InboxListener implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            Intent i = new Intent(PassengerMainActivity.this, PassengerInboxActivity.class);
-            startActivity(i);
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -243,80 +140,24 @@ public class PassengerMainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-//            case R.id.action_logout:
-//                SharedPreferences userPrefs = getSharedPreferences("userPrefs", Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = userPrefs.edit();
-//                editor.clear();
-//                editor.apply();
-//                startActivity(new Intent(PassengerMainActivity.this, UserLoginActivity.class));
-//                finish();
-//                return true;
-        }
 
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.passengerHome:
+                FragmentTransition.to(PassengerMainFragment.newInstance(passenger),pvm,true,R.id.mainContent);
+                break;
+            case R.id.passengerAccount:
+                FragmentTransition.to(PassengerProfileFragment.newInstance(passenger),pvm,true,R.id.mainContent);
+                break;
+            case R.id.passengerInbox:
+                //FragmentTransition.to(PassengerInboxFragment.newInstance(),pvm,true,R.id.mainContent);
+                break;
+            case R.id.passengerHistory:
+                break;
+        }
         return super.onOptionsItemSelected(item);
     }
-
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItemFromDrawer(position);
-            Log.i("ITEM CLICK:", String.valueOf(position));
-
-        }
-    }
-
-    private void selectItemFromDrawer(int position) {
-        if (position == 0) {
-            //FragmentTransition.to(PassengerInboxFragment.newInstance(passenger), this, false, R.id.mainContent);
-        } else if (position == 1) {
-            //FragmentTransition.to(PassengerDriveHistoryFragment.newInstance(passenger), this, false, R.id.mainContent);
-        } else if (position == 2) {
-            //..
-        } else if (position == 3) {
-            //..
-        } else if (position == 4) {
-            //..
-        } else if (position == 5) {
-            //...
-        } else {
-            Log.e("DRAWER", "Nesto van opsega!");
-        }
-
-        mDrawerList.setItemChecked(position, true);
-        if (position != 5) // za sve osim za sync
-        {
-            setTitle(mNavItems.get(position).getmTitle());
-        }
-        mDrawerLayout.closeDrawer(mDrawerPane);
-    }
-
-
-//    @SuppressLint("NonConstantResourceId")        TODO PRVI TOOLBAR KOJI SMO NAPISALI
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        int id = item.getItemId();
-//        switch (id) {
-//            case R.id.passengerHome:
-//                Intent i = new Intent(PassengerMainActivity.this, PassengerMainActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.passengerAccount:
-//                Intent i2 = new Intent(PassengerMainActivity.this, PassengerAccountActivity.class);
-//                startActivity(i2);
-//                break;
-//            case R.id.passengerInbox:
-//                Intent i3 = new Intent(PassengerMainActivity.this, PassengerInboxActivity.class);
-//                startActivity(i3);
-//                break;
-//            case R.id.passengerHistory:
-//                Intent i4 = new Intent(PassengerMainActivity.this, PassengerHistoryActivity.class);
-//                startActivity(i4);
-//                break;
-//        }
-//        finish();
-//        return super.onOptionsItemSelected(item);
-//    }
 }
