@@ -12,6 +12,6 @@
     <color name="green_1000">#026056</color>
     <color name="green_1200">#03554D</color>
     <color name="off_white">#F0F0F0</color>
-    <color name="red">FF5B5B</color>
+    <color name="red">#FF5B5B</color>
     <color name="grey">#ECECEC</color>
 </resources>

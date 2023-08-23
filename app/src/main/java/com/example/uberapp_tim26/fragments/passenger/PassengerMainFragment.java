@@ -27,9 +27,7 @@ public class PassengerMainFragment extends Fragment {
     private UserInfoDTO passenger;
     private Context context;
     private PassengerMainFragment fragment;
-
     private SharedPreferences userPrefs;
-    //Calendar now = Calendar.getInstance();
 
     public PassengerMainFragment() {
     }
@@ -52,9 +50,7 @@ public class PassengerMainFragment extends Fragment {
         userPrefs = getContext().getSharedPreferences("userPrefs", Context.MODE_PRIVATE);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
         Context ctx = this.getContext();
-        //Configuration.getInstance().load(ctx, getDefaultSharedPreferences(ctx));
     }
 
     @Override

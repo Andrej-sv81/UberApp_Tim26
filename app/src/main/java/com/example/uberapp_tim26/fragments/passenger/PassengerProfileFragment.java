@@ -52,15 +52,9 @@ public class PassengerProfileFragment extends Fragment {
     private TextView lastName;
     private TextView email;
     private TextView phoneNumber;
-    private TextView dateOfBirth;
     private TextView address;
     private UserInfoDTO passenger;
-    private View iconRoutes;
     private Button editProfile;
-
-    private View routesDialogView;
-
-    private AlertDialog routesDialog;
 
     private ImageView image;
 
@@ -84,14 +78,11 @@ public class PassengerProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         passenger = (UserInfoDTO) getArguments().getSerializable(ARG_PASSENGER);
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_passenger_profile, container, false);
 
     }
@@ -99,16 +90,7 @@ public class PassengerProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
-        LayoutInflater inflater = getLayoutInflater();
-        //routesDialogView = inflater.inflate(R.layout.passenger_routes_dialog, null);
-        AlertDialog.Builder builder2 = new AlertDialog.Builder(this.getContext());
-        builder2.setView(routesDialogView);
-        routesDialog = builder2.create();
-        //FragmentTransition.to(PassengerProfileFragment.newInstance(passenger),dvm,false,R.id.mainContent);
         editProfile = getView().findViewById(R.id.edit_profile_btn);
-        Button reports = getView().findViewById(R.id.reports_profile_btn);
         PassengerMainActivity dvm = (PassengerMainActivity) this.getActivity();
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,24 +98,6 @@ public class PassengerProfileFragment extends Fragment {
                 FragmentTransition.to(PassengerEditProfileFragment.newInstance(passenger),dvm,false,R.id.mainContent);
             }
         });
-        reports.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //FragmentTransition.to(PassengerReportFragments.newInstance(passenger),dvm,false,R.id.mainContent);
-            }
-        });
-
-
-//        iconRoutes = getView().findViewById(R.id.imageRouteLayout);
-//        iconRoutes.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                createRouteDialogAndShow(routesDialogView,routesDialog,passenger.getId());
-//            }
-//        });
-
-        ImageView image = getView().findViewById(R.id.profileIcon);
-        Glide.with(getContext()).load(passenger.getProfilePicture()).into(image);
 
         firstName = getView().findViewById(R.id.nameValue);
         lastName = getView().findViewById(R.id.surnameValue);
@@ -150,28 +114,6 @@ public class PassengerProfileFragment extends Fragment {
 
     }
 
-    private void createRouteDialogAndShow(View routesDialogView, AlertDialog routesDialog, Integer driverId) {
 
 
-        ServiceUtils.rideEndpoints.getFavouriteRides().enqueue(new Callback<List<FavouriteRideInfoDTO>>() {
-            @Override
-            public void onResponse(Call<List<FavouriteRideInfoDTO>> call, Response<List<FavouriteRideInfoDTO>> response) {
-                if(response.isSuccessful()){
-                    //ListView listView = routesDialogView.findViewById(R.id.routesList);
-                    //PassengerRoutesDialogAdapter adapter = new PassengerRoutesDialogAdapter(getContext(), response.body());
-                    //listView.setAdapter(adapter);
-                    routesDialog.show();
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<FavouriteRideInfoDTO>> call, Throwable t) {
-
-            }
-
-        });
-
-
-    }
 }
