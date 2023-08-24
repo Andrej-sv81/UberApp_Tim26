@@ -32,7 +32,7 @@ public class UserLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
-
+        credentialsDTO = new CredentialsDTO();
         Button register = findViewById(R.id.registerbtn);
         register.setOnClickListener(new RegisterListener());
 
@@ -94,10 +94,11 @@ public class UserLoginActivity extends AppCompatActivity {
 
 
     private void logInUser() {
-        String emailInput = ((EditText) findViewById(R.id.email)).getText().toString();
+        String emailInput = ((EditText)findViewById(R.id.email)).getText().toString();
         if (emailInput.equals("")) {
             return;
         }
+
         credentialsDTO.setEmail(emailInput);
 
         String passwordInput = ((EditText) findViewById(R.id.password)).getText().toString();
@@ -111,10 +112,9 @@ public class UserLoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginDTO> call, Response<LoginDTO> response) {
                 if (response.code() == 200) {
-                    Log.d("PASSED", "radi");
                     redirect(response.body().getAccessToken());
                 } else {
-                    Log.d("NOT 200", "Meesage recieved: " + response.code());
+                    //Log.d("NOT 200", "Meesage recieved: " + response.code());
                 }
             }
 
