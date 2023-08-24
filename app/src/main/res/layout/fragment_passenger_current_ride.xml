@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DriverAcceptanceRideActivity">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/citymap"
+        android:id="@+id/mapdriver"
+        />
+
+    <RelativeLayout
+        android:id="@+id/informations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mapdriver"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15sp"
+        >
+
+        <TextView
+            android:id="@+id/priceAcceptance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price_price"
+            android:textSize="18sp"/>
+
+
+        <TextView
+            android:id="@+id/durationaAcceptance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/duration_duration"
+            android:textSize="18sp"
+            android:layout_below="@id/priceAcceptance"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/driverinfo"
+        android:layout_width="315sp"
+        android:layout_height="100sp"
+        android:layout_below="@+id/informations"
+        android:background="@color/grey"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/yourdriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/driver">
+        </TextView>
+
+        <TextView
+            android:id="@+id/drivername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/yourdriver"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="15sp"
+            android:text="@string/namesurname"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </TextView>
+<!--DRIVER OF RIDE INFO-->
+
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_below="@+id/yourdriver"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="15dp"
+            android:layout_alignLeft="@+id/drivername"
+            android:layout_toRightOf="@+id/drivername"
+            android:background="@color/off_white"
+            android:src="@drawable/message">
+
+        </ImageView>
+    </RelativeLayout>
+
+
+
+    <Button
+        android:id="@+id/inconstincy"
+        android:layout_width="315sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/driverinfo"
+        android:text="@string/inconsistency"
+        android:textSize="18sp"
+        android:padding="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15sp">
+    </Button>
+
+    <Button
+        android:layout_width="315sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inconstincy"
+        android:layout_centerHorizontal="true"
+        android:text="@string/panic"
+        android:textSize="18sp"
+        android:padding="20dp"
+        android:background="@color/red"
+        android:layout_marginTop="10sp">
+
+    </Button>
+
+
+
+</RelativeLayout>
+
+
+
+

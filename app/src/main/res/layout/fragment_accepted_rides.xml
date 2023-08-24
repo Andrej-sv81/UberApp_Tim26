@@ -12,9 +12,8 @@
         android:layout_height="fill_parent"
         android:orientation="vertical">
 
-
         <ListView
-            android:id="@+id/listView"
+            android:id="@+id/listViewRides"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

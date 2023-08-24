@@ -21,7 +21,7 @@
     <string name="home">Home</string>
     <string name="profile_image">Profile Image</string>
     <string name="relation_a_to_b">Relation: A to B</string>
-    <string name="milaege_km">Milaege: _km</string>
+    <string name="milaege_km">Milaege:</string>
     <string name="price_price">Price: price</string>
     <string name="passengers_number">Passengers: number</string>
     <string name="duration_duration">Duration: duration</string>
@@ -56,4 +56,16 @@
     <string name="cancel">Cancel</string>
     <string name="Submit">Submit</string>
     <string name="favouriterides">Favourite rides</string>
+    <string name="from">From:</string>
+    <string name="to">To:</string>
+    <string name="baby">Baby</string>
+    <string name="pet">Pet</string>
+    <string name="findride">Find ride</string>
+    <string name="endride">End ride</string>
+    <string name="cancelride">Cancel ride</string>
+    <string name="inconsistency">Report inconsistency</string>
+    <string name="driver">Your driver</string>
+    <string name="namesurname">Name Lastname</string>
+    <string name="location">Location Name Number, City</string>
+    <string name="start">Start ride</string>
 </resources>
