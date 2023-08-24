@@ -10,67 +10,41 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/citymap"
-        android:id="@+id/mapdriver"/>
+        android:id="@+id/mapdriver"
+        />
 
     <RelativeLayout
         android:id="@+id/informations"
-        android:layout_width="250sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/mapdriver"
         android:layout_centerHorizontal="true"
         >
 
-        <TextView
-            android:id="@+id/relationAcceptance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/from"
-            />
 
         <TextView
-            android:id="@+id/locationFrom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lokacija 1"
-            android:layout_toRightOf="@+id/relationAcceptance"
-            />
-
-        <TextView
-            android:layout_below="@id/relationAcceptance"
-            android:id="@+id/milaegeAcceptance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/milaege_km"
-            />
-
-        <TextView
-            android:layout_below="@id/milaegeAcceptance"
             android:id="@+id/priceAcceptance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/price_price"
+            android:textSize="18sp"
             />
 
-        <TextView
-            android:id="@+id/passengersAcceptance"
-            android:layout_below="@id/priceAcceptance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/passengers_number"
-            />
 
         <TextView
             android:id="@+id/durationaAcceptance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/duration_duration"
-            android:layout_below="@id/passengersAcceptance"/>
+            android:textSize="18sp"
+            android:layout_below="@id/priceAcceptance"/>
 
     </RelativeLayout>
 
 
 
     <LinearLayout
+        android:id="@+id/layoutbuttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/informations"
@@ -81,16 +55,14 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/acceptbtn"
-            android:layout_marginEnd="10dp"
+            android:id="@+id/endbtn"
+            android:layout_marginEnd="5dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:padding="20dp"
-            android:text="@string/accept"
-            android:textStyle="bold"
+            android:text="@string/endride"
             android:textSize="18sp"
-            android:background="@color/black"
             android:textColor="@color/white" />
 
         <com.google.android.material.button.MaterialButton
@@ -102,12 +74,25 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:padding="20dp"
-            android:text="@string/decline"
+            android:text="@string/cancelride"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            />
 
     </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="315sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutbuttons"
+        android:layout_centerHorizontal="true"
+        android:text="@string/panic"
+        android:textSize="18sp"
+        android:padding="20dp"
+        android:background="@color/red" />
+
+
+
 
 
 

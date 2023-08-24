@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100sp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/citymap"
+            android:id="@+id/map"
+            android:layout_marginRight="5sp"
+            android:layout_marginLeft="5sp"
+            android:background="@color/black">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/from"
+            android:layout_marginTop="30sp"
+            android:layout_marginBottom="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/from"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/map"
+            android:textSize="12sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/location1"
+            android:layout_width="230sp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/from"
+            android:text="@string/location"
+            android:textSize="15sp"
+            android:layout_marginTop="30sp"
+            android:layout_alignLeft="@+id/from"
+            android:layout_marginLeft="33sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to"
+            android:layout_toRightOf="@+id/map"
+            android:layout_below="@+id/from"
+            android:textSize="12sp"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:id="@+id/location2"
+            android:layout_width="230sp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/to"
+            android:layout_alignLeft="@+id/to"
+            android:layout_marginLeft="33sp"
+            android:layout_below="@+id/from"
+            android:text="@string/location"
+            android:textSize="15sp">
+        </TextView>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/location1"
+            android:text="@string/start"
+            android:textSize="8sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="3sp"
+            android:layout_centerVertical="true"
+            android:layout_alignBaseline="@+id/map">
+        </com.google.android.material.button.MaterialButton>
+
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

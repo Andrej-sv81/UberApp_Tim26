@@ -5,16 +5,93 @@
     android:layout_height="match_parent"
     tools:context=".fragments.passenger.PassengerMainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:text="@string/hello_blank_fragment" />-->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        
+
+        <RelativeLayout
+            android:id="@+id/maplayout"
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:background="@drawable/citymap"
+            android:layout_marginBottom="50sp"
+            android:layout_marginTop="50sp">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/formlayout"
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:layout_below="@+id/maplayout"
+            android:background="@color/white">
+
+            <EditText
+                android:id="@+id/fromEditText"
+                android:layout_width="250sp"
+                android:layout_height="35sp"
+                android:background="@color/off_white"
+                android:hint="@string/from"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15sp">
+            </EditText>
+
+            <EditText
+                android:id="@+id/toEditText"
+                android:layout_width="250sp"
+                android:layout_height="35sp"
+                android:layout_below="@+id/fromEditText"
+                android:background="@color/off_white"
+                android:hint="@string/to"
+                android:layout_centerHorizontal="true">
+            </EditText>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:id="@+id/checkboxes"
+                android:layout_below="@+id/toEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15sp">
+
+                <CheckBox
+                    android:id="@+id/babyCheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/baby"
+                    android:checked="false"
+                    android:background="@color/white"
+                    android:buttonTint="@color/black"
+                    />
+
+                <CheckBox
+                    android:id="@+id/petCheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pet"
+                    android:checked="false"
+                    android:background="@color/white"
+                    android:layout_toRightOf="@+id/babyCheckbox"
+                    android:layout_marginLeft="20sp"
+                    android:buttonTint="@color/black"/>
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="250sp"
+                android:layout_height="50sp"
+                android:layout_below="@+id/checkboxes"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15sp"
+                android:text="@string/findride"
+                android:textColor="@color/white">
+            </Button>
+
+        </RelativeLayout>
+
 
     </RelativeLayout>
+
+
 
 </FrameLayout>
