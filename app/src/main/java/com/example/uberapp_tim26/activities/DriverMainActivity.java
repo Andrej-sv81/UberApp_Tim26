@@ -6,20 +6,90 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.uberapp_tim26.R;
+import com.google.gson.GsonBuilder;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import tech.gusavila92.websocketclient.WebSocketClient;
 
 public class DriverMainActivity extends AppCompatActivity implements View.OnClickListener{
     private Button toggleButton;
+    private WebSocketClient webSocketClient;
+    private SharedPreferences driverSharedPreferences;
+
+    private void createDriverWebSocketSession(){
+        URI uri;
+        try {
+            // Connect to local host
+
+
+            uri = new URI("ws://" + "192.168.1.8:8080" + "/socket");
+        }
+        catch (URISyntaxException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        webSocketClient = new WebSocketClient(uri) {
+            @Override
+            public void onOpen() {
+                Log.d("WebSocket", "Session is starting on websocket");
+                webSocketClient.send("Hello World!");
+            }
+
+            @Override
+            public void onTextReceived(String s) {
+                Log.d("poruka",s);
+                final String message = s;
+                // kroz intent se salje string
+                // TODO intent za prebacivanje na novi acceptance i da se doda string S u intent , u aktivitiju se kestuje u objekat
+            }
+
+            @Override
+            public void onBinaryReceived(byte[] data) {
+            }
+
+            @Override
+            public void onPingReceived(byte[] data) {
+            }
+
+            @Override
+            public void onPongReceived(byte[] data) {
+            }
+
+            @Override
+            public void onException(Exception e) {
+                System.out.println(e.getMessage());
+            }
+
+            @Override
+            public void onCloseReceived() {
+                Log.i("WebSocket", "Closed ");
+                System.out.println("onCloseReceived");
+            }
+        };
+
+        webSocketClient.enableAutomaticReconnection(1000);
+        webSocketClient.addHeader("id", String.valueOf(driverSharedPreferences.getLong("id",0)));
+        webSocketClient.addHeader("role","ROLE_DRIVER");
+        webSocketClient.connect();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        driverSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         setContentView(R.layout.activity_driver_main);
 
         Toolbar toolbar = findViewById(R.id.toolbarDriverMain);
@@ -27,6 +97,8 @@ public class DriverMainActivity extends AppCompatActivity implements View.OnClic
 
         toggleButton = (Button) findViewById(R.id.toggleBtn);
         toggleButton.setOnClickListener((View.OnClickListener) this);
+
+        createDriverWebSocketSession();
     }
 
     @Override

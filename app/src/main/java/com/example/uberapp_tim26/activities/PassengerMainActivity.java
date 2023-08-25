@@ -1,39 +1,23 @@
 package com.example.uberapp_tim26.activities;
 
 import android.annotation.SuppressLint;
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Base64;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import com.example.uberapp_tim26.R;
-import com.example.uberapp_tim26.adapters.DrawerListAdapter;
-import com.example.uberapp_tim26.fragments.passenger.PassengerInboxFragment;
 import com.example.uberapp_tim26.fragments.passenger.PassengerMainFragment;
 import com.example.uberapp_tim26.fragments.passenger.PassengerProfileFragment;
 import com.example.uberapp_tim26.model.NavItem;
@@ -45,7 +29,6 @@ import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Response;
 import tech.gusavila92.websocketclient.WebSocketClient;
 
