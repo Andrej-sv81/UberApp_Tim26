@@ -41,12 +41,6 @@ public class MessageAdapter extends BaseAdapter {
         if(convertView==null)
             messageView = activity.getLayoutInflater().inflate(R.layout.message_list, null);
 
-        TextView name = (TextView)messageView.findViewById(R.id.name);
-        TextView title = (TextView)messageView.findViewById(R.id.title);
-
-        name.setText(message.getUsername());
-        title.setText(message.getTitle());
-
 
         return  messageView;
     }

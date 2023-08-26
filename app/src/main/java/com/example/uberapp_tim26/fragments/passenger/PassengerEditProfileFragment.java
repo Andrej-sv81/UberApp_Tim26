@@ -153,7 +153,7 @@ public class PassengerEditProfileFragment extends Fragment {
                 }
                 ChangePasswordDTO changePasswordDTO = new ChangePasswordDTO(newPassword.getText().toString(),oldPassword.getText().toString());
                 String id = requireActivity().getApplicationContext().getSharedPreferences("userPrefs", Context.MODE_PRIVATE).getString("id","0");
-                Call<ResponseBody> call = ServiceUtils.userEndpoints.changeUserPassword(id,changePasswordDTO);
+                Call<ResponseBody> call = ServiceUtils.userService.changeUserPassword(id,changePasswordDTO);
                 call.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -283,7 +283,7 @@ public class PassengerEditProfileFragment extends Fragment {
                 String base64String = "data:image/jpeg;base64,"+ Base64.encodeToString(imageBytes, Base64.DEFAULT);
                 passengerDTO.setTelephoneNumber(phoneNumber);
                 passengerDTO.setProfilePicture(base64String);
-                Call<UserInfoDTO> call = ServiceUtils.passengerEndpoints.changePassengerInfo(passenger.getId().toString(),passengerDTO);
+                Call<UserInfoDTO> call = ServiceUtils.passengerService.changePassengerInfo(passenger.getId().toString(),passengerDTO);
                 call.enqueue(new Callback<UserInfoDTO>() {
                     @Override
                     public void onResponse(Call<UserInfoDTO> call, Response<UserInfoDTO> response) {

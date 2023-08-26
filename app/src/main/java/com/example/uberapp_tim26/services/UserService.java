@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
-public interface UserEndpoints {
+public interface UserService {
     String urlExtension = "user";
     @Headers({
             "User-Agent: Mobile-Android",

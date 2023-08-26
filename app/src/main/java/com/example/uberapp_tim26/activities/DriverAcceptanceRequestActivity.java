@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.uberapp_tim26.R;
 
-public class DriverAcceptanceRideActivity extends AppCompatActivity {
+public class DriverAcceptanceRequestActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
