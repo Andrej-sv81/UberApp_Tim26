@@ -2,7 +2,6 @@ package com.example.uberapp_tim26.fragments.passenger;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,7 +18,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.uberapp_tim26.R;
-import com.example.uberapp_tim26.model.LocationDTO;
 import com.example.uberapp_tim26.model.PassengerCredentialsDTO;
 import com.example.uberapp_tim26.model.RideDTO;
 import com.example.uberapp_tim26.model.RideRequestDTO;
@@ -28,9 +26,6 @@ import com.example.uberapp_tim26.model.UserInfoDTO;
 import com.example.uberapp_tim26.services.MapService;
 import com.example.uberapp_tim26.services.ServiceUtils;
 
-import java.io.Serializable;
-import java.nio.file.attribute.UserPrincipal;
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,7 +105,7 @@ public class PassengerMainFragment extends Fragment {
                         route.setDestination(locationDTO2);
                         routes.add(route);
                         request.setLocations(routes);
-                        Call<RideDTO> call = ServiceUtils.rideEndpoints.createRide(request);
+                        Call<RideDTO> call = ServiceUtils.rideService.createRide(request);
                         call.enqueue(new Callback<RideDTO>() {
                             @Override
                             public void onResponse(Call<RideDTO> call, Response<RideDTO> response) {

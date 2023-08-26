@@ -1,12 +1,8 @@
 package com.example.uberapp_tim26.services;
 
-import static com.example.uberapp_tim26.services.UserEndpoints.urlExtension;
-
-import com.example.uberapp_tim26.model.FavouriteRideInfoDTO;
 import com.example.uberapp_tim26.model.RideDTO;
 import com.example.uberapp_tim26.model.RideRequestDTO;
 
-import java.security.Principal;
 import java.util.List;
 
 import retrofit2.Call;
@@ -16,7 +12,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
-public interface RideEndpoints {
+public interface RideService {
     @Headers({
             "User-Agent: Mobile-Android",
             "Content-Type:application/json"

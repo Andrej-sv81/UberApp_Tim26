@@ -23,9 +23,9 @@ public class ServiceUtils {
             .build();
 
     // SERVICES ON SPRINGBOOT SERVER
-    public static UserEndpoints userEndpoints = retrofit.create(UserEndpoints.class);
-    public static PassengerEndpoints passengerEndpoints = retrofit.create(PassengerEndpoints.class);
-    public static RideEndpoints rideEndpoints = retrofit.create(RideEndpoints.class);
+    public static UserService userService = retrofit.create(UserService.class);
+    public static PassengerService passengerService = retrofit.create(PassengerService.class);
+    public static RideService rideService = retrofit.create(RideService.class);
 
 
     static OkHttpClient clientReports = new OkHttpClient.Builder()

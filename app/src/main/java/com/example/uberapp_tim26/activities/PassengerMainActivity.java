@@ -60,7 +60,7 @@ public class PassengerMainActivity extends AppCompatActivity {
 
         userPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         pvm = this;
-        Call<UserInfoDTO> driverInfoDTOCall = ServiceUtils.passengerEndpoints.getPassengerById(String.valueOf(userPrefs.getLong("id", 0L)));
+        Call<UserInfoDTO> driverInfoDTOCall = ServiceUtils.passengerService.getPassengerById(String.valueOf(userPrefs.getLong("id", 0L)));
         driverInfoDTOCall.enqueue(new Callback<UserInfoDTO>() {
             @Override
             public void onResponse(Call<UserInfoDTO> call, Response<UserInfoDTO> response) {

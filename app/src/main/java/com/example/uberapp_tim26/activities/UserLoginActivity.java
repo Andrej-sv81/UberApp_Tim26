@@ -107,7 +107,7 @@ public class UserLoginActivity extends AppCompatActivity {
         }
         credentialsDTO.setPassword(passwordInput);
 
-        Call<LoginDTO> call = ServiceUtils.userEndpoints.login(credentialsDTO);
+        Call<LoginDTO> call = ServiceUtils.userService.login(credentialsDTO);
         call.enqueue(new Callback<LoginDTO>() {
             @Override
             public void onResponse(Call<LoginDTO> call, Response<LoginDTO> response) {
